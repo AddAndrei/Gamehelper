@@ -1,0 +1,10 @@
+{
+    "":"api\/user",
+    "home":"home",
+    "games":"games",
+    "create":"create",
+    "teams":"teams",
+    "createteams":"teams",
+    "map":"map",
+    "createmap":"createmap"
+}

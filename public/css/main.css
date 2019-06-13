@@ -1,0 +1,11 @@
+#uploade-file{
+    display: none;
+}
+.file-up{
+    cursor: pointer;
+}
+#map{
+    height: 500px;
+    border: 1px solid #ccc;
+    padding: 0;
+}
