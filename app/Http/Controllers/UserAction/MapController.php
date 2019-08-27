@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\UserAction;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Repositories\MapRepository;
+use Illuminate\Support\Facades\Auth;
 
-class MapController extends Controller
+class MapController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -17,15 +18,20 @@ class MapController extends Controller
         $this->middleware('auth');
     }
     //
-    public function index()
+    public function index(MapRepository $collection)
     {
-        return view('auth.map');
+
+        $objects = $collection->getDefaultObjects();
+        return view('auth.map',['defaultobjects'=>$objects]);
     }
     /**
      *
      */
-    public function create(Request $request)
+    public function create(MapRepository $collection)
     {
-        
+
+        $objects = $collection->getDefaultObjects();
+        return view('auth.map',['defaultobjects'=>$objects]);
     }
+
 }

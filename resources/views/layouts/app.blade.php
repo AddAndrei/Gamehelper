@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/app/app.js') }}"></script>
-
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=42ea9f83-48c6-446c-9639-0a0d9f9c7656"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -52,35 +52,43 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link" href="{{route('home')}}">
+                                    {{ Auth::user()->name }}
                                 </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('home') }}">
-                                                {{ __('Главная') }}
-                                            </a>
-                                    <a class="dropdown-item" href="{{ route('games') }}">
-                                        {{ __('Игры') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('create') }}">
-                                        {{ __('Создать игру') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
-                                            {{ __('Помощь') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}">
-                                            {{ __('История') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('games') }}">
+                                    {{ __('Игры') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('create') }}">
+                                    {{ __('Создать игру') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('help') }}">
+                                    {{ __('Помощь') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('history') }}">
+                                    {{ __('История') }}
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Выйти') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
+                                    {{ __('Выйти') }}
+                                </a>
+                            </li>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                                 </div>
                             </li>
                         @endguest

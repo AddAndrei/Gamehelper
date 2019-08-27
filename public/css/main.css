@@ -1,4 +1,4 @@
-#uploade-file{
+#uploade-file,#uploade-file-redact{
     display: none;
 }
 .file-up{
@@ -6,6 +6,82 @@
 }
 #map{
     height: 500px;
-    border: 1px solid #ccc;
-    padding: 0;
+
 }
+.selected{
+    width: 50px;
+    height: 50px;
+    border:1px solid #ccc;
+    border-radius: 50%;
+}
+.leftmenubar{
+    color: #fff;
+    cursor: pointer;
+}
+.leftmenubar:hover{
+    color: #a1cbef;
+}
+.roles-close:hover{
+    color: #cccccc;
+    cursor: pointer;
+}
+table>thead>tr>th,table>tbody>tr>td{
+    text-align: center;
+}
+.list-icons{
+    cursor: pointer;
+}
+.list-icons:hover{
+    color: #444444;
+}
+.map-objects{
+    cursor: pointer;
+}
+.map-objects:hover{
+    color: #666666;
+}
+.blink{
+    animation-name: blink;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
+    10%{
+        opacity: .8;
+    }
+    50%{
+        opacity: .5;
+    }
+    90%{
+        opacity: 0.8;
+    }
+}
+.hidden-pass{
+    display: none;
+}
+.hidden-pass-redact{
+    display: none;
+}
+.delete-quest,.redact-quest{
+    color: #3490DC;
+    cursor: pointer;
+}
+#map-redact{
+    height: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

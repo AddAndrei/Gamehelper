@@ -114,10 +114,4 @@ class Picker{
 
 
 
-let picker = new Picker(document.getElementById("color-picker"),280,180);
-setInterval(() => picker.draw(),1);
 
-picker.onChange((color)=>{
-    let selected = document.getElementsByClassName("selected")[0];
-    selected.style.backgroundColor = `rgb(${color.r},${color.g},${color.b})`;
-});

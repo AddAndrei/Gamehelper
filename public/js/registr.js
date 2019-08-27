@@ -1,17 +1,6 @@
 
 
-function previewImg(el)
-{
 
-    let reader = new FileReader();
-    reader.onload = function(e){
-        let img = document.createElement('img');
-        img.src = e.target.result;
-        img.classList.add('img-fluid');
-        $("#preload-img").append(img);
-    }
-    reader.readAsDataURL(el.files[0]);
-}
 
 window.onload = function(){
     //console.log($("#mobile"));
@@ -22,9 +11,7 @@ window.onload = function(){
     if(map){
         console.log(1);
     }*/
-    ymaps.ready(()=>{
-        let map = new Map('map');
-    });
+
 
 }
 

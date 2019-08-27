@@ -1,6 +1,18 @@
 
-<nav class="navbar navbar-light bg-dark">
-    <a class="navbar-brand active" style="color:#fff;" href="{{ route('create') }}">Основное</a>
-    <a class="navbar-brand active" style="color:#fff;" href="{{ route('teams') }}">Команды</a>
-    <a class="navbar-brand active" style="color:#fff;" href="{{ route('map') }}">Карта</a>
-</nav>
+    <nav class="navbar navbar-light bg-dark">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link leftmenubar" href="{{ route('create') }}">Основное</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftmenubar" href="{{ route('teams') }}">Команды</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftmenubar" href="{{ route('map') }}">Карта</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link leftmenubar" href="{{ route('quests') }}">Квесты</a>
+        </li>
+    </ul>
+    </nav>
+

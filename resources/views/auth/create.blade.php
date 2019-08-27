@@ -64,6 +64,18 @@
                                     @enderror
                                 </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="sity" class="col-sm-2 col-form-label text-sm-left">{{ __('Город') }}</label>
+                            <!--Выбрать тип игры-->
+                            <div class="col-sm-10">
+                                <input id="sity" type="text" class="form-control @error('sity') is-invalid @enderror" name="sity" placeholder="Город" value="{{ old('sity') }}" required autocomplete="sity" autofocus>
+                                @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                @enderror
+                            </div>
+                        </div>
                         <!--start game-->
                         <div class="form-group row">
                             <label for="start" class="col-sm-2 col-form-label text-sm-left">{{ __('Начало') }}</label>
@@ -115,7 +127,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-10"></div>
                                 <div class="col-sm-2">
-                                    <button type="submit" name="stepto" class="btn btn-dark btn-block">Далее</button>
+                                    <button type="submit" name="stepto" class="btn btn-dark btn-block" onclick="saveGame()">Далее</button>
                                 </div>
                             </div>
                     </form>
@@ -126,6 +138,6 @@
     </div>
 
 </div>
-
+<script src="{{ asset('js/user/create.js') }}"></script>
 
 @endsection

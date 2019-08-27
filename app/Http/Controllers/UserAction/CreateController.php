@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers\UserAction;
 
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+
+
+
 use App\Repositories\CreateRepository;
 use App\Repositories\CreateTeamRepository;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cookie;
 
-class CreateController extends Controller
+class CreateController extends BaseController
 {
     //
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -25,6 +22,7 @@ class CreateController extends Controller
      */
     public function index(CreateRepository $create)
     {
+        date_default_timezone_set('Europe/Moscow');
         $items = $create->getAllType();
         return view('auth.create',compact('items'));
     }

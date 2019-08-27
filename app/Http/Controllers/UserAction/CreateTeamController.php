@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\UserAction;
 
-use Illuminate\Http\Request;
+
+
 use App\Http\Controllers\Controller;
 use App\Repositories\CreateTeamRepository;
 
-class CreateTeamController extends Controller
+class CreateTeamController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -19,9 +20,10 @@ class CreateTeamController extends Controller
     }
 
     //
-    public function index(Request $request,CreateTeamRepository $roles)
+    public function index(CreateTeamRepository $roles)
     {
         $collection = $roles->getDefaultRoles();
+
 
         return view('auth.teams',['collection'=>$collection]);
     }
